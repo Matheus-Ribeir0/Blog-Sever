@@ -4,12 +4,17 @@ const cors = require("cors")
 const router = express.Router();
 
 app.use(express.json());
-app.use(cors());
+app.use(cors())
 
 const db = require("./models");
 
 const port = process.env.PORT || 3001
 // Routers
+
+app.get("/", (req, res) => res.send("Express on Vercel"));
+app.get("/ping", (req, res) => res.send("servidor online"));
+app.listen(port, () => console.log("Server ready on port 3000."));
+
 const postRouter = require("./routes/Posts");
 app.use("/posts", postRouter);
 
@@ -22,21 +27,9 @@ app.use("/auth", usersRouter);
 const likesRouter = require("./routes/Likes");
 app.use("/like", likesRouter);
 
-router.get("/ping", (req, res) => {
-  res.json({ message: "Servidor está online!" });
-});
-
-db.sequelize.sync().then(() => {
-  app.listen(3001, () => {
-    console.log("Server running on port 3001");
+db.sequelize.sync().then((res) => {
+  app.listen(port, () => {
+    res.send("Server online")
+       console.log("Server running on port 3001");
   });
 });
-
-db.sequelize.authenticate()
-  .then(() => {
-    console.log('Connection has been established successfully.');
-  })
-  .catch((err) => {
-    console.error('Unable to connect to the database:', err);
-  });
-  module.exports = router;
