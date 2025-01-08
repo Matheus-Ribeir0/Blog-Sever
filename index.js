@@ -8,6 +8,7 @@ app.use(cors());
 
 const db = require("./models");
 
+const port = process.env.PORT || 3001
 // Routers
 const postRouter = require("./routes/Posts");
 app.use("/posts", postRouter);
