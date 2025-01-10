@@ -8,7 +8,7 @@ app.use(cors())
 
 const db = require("./models");
 
-const port = process.env.PORT || 3001
+const port = process.env.PORT 
 // Routers
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
@@ -27,9 +27,3 @@ app.use("/auth", usersRouter);
 const likesRouter = require("./routes/Likes");
 app.use("/like", likesRouter);
 
-db.sequelize.sync().then((res) => {
-  app.listen(port, () => {
-    res.send("Server online")
-       console.log("Server running on port 3001");
-  });
-});
