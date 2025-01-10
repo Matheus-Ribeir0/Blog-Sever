@@ -13,7 +13,6 @@ const port = process.env.PORT
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
 app.get("/ping", (req, res) => res.send("servidor online"));
-app.listen(port, () => console.log("Server ready on port 3000."));
 
 const postRouter = require("./routes/Posts");
 app.use("/posts", postRouter);
@@ -26,4 +25,10 @@ app.use("/auth", usersRouter);
 
 const likesRouter = require("./routes/Likes");
 app.use("/like", likesRouter);
+
+db.sequelize.sync().then((res) => {
+  app.listen(port, () => {
+       console.log("Server running on port 3001");
+  });
+});
 
