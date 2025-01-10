@@ -2,14 +2,13 @@ const express = require("express");
 const app = express();
 const cors = require("cors")
 const router = express.Router();
-
+const env= 0
 app.use(express.json());
 app.use(cors())
 
 const db = require("./models");
 
-const port = process.env.PORT 
-// Routers
+const port = process.env.PORT
 
 app.get("/", (req, res) => res.send("Express on Vercel"));
 app.get("/ping", (req, res) => res.send("servidor online"));
@@ -31,4 +30,4 @@ db.sequelize.sync().then((res) => {
        console.log("Server running on port 3001");
   });
 });
-
+//
