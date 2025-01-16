@@ -8,6 +8,7 @@ Este repositório contém o back-end de uma aplicação fullstack desenvolvida p
 ([Programing Blog](https://blog-client-olive.vercel.app/))
 
 ---
+
 ## Tecnologias Utilizadas
 
 - **Node.js**: Ambiente de execução JavaScript para o servidor.
