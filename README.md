@@ -5,7 +5,7 @@ Este repositório contém o back-end de uma aplicação fullstack desenvolvida p
 ---
 
 ### Você pode conferir o projeto e adicionar posts e comentários sobre porgramação a vontade através da url:
-[https://blog-client-olive.vercel.app/](Programing Blog)
+([Programing Blog](https://blog-client-olive.vercel.app/))
 
 ---
 ## Tecnologias Utilizadas
